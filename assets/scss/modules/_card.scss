@@ -1,0 +1,22 @@
+.progress-bar {
+  position: relative;
+  overflow: hidden;
+  background: rgba(lighten($primary, 40%), 0.3);
+  border-radius: 4px;
+
+  .bar {
+    display: block;
+    height: 4px;
+    background: $primary;
+    border-radius: 4px;
+
+    @media #{$medium} {
+      height: 8px;
+    }
+  }
+}
+
+.hash-container {
+  background-color: rgba(lighten($primary, 40%), 0.2);
+  padding: 14px 16px;
+}

@@ -1,0 +1,249 @@
+// List helper
+// ------------------------------------------------------------------------ //
+
+.list-nostyle {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.list-inline > li {
+	display: inline-block;
+}
+
+.list-normalize {
+    padding-left: 24px;
+    > li {
+        padding-left: 4px;
+		}
+}
+
+// Typography helper
+// ------------------------------------------------------------------------ //
+
+.text-small {
+	font-size: 80%;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-ellipsis {
+	display: block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.text-caps {
+	text-transform: uppercase;
+}
+
+.text-cap {
+	text-transform: capitalize;
+}
+
+.text-reg {
+	font-weight: normal;
+}
+
+.text-semibold {
+	font-weight: 600;
+}
+
+// Visual helper
+// ------------------------------------------------------------------------ //
+
+.clearfix:after,
+.cf:after {
+	display: table;
+	clear: both;
+	content: '';
+}
+
+.d-block {
+	display: block;
+}
+
+.d-iblock {
+	display: inline-block;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.desktop-only {
+	display: none !important;
+
+	@media #{$large} {
+		display: block !important;
+	}
+}
+
+hr {
+	border-top-color: rgba($black, 0.1);
+}
+
+.bb {
+	border-bottom: 1px solid #D0D0D0;
+}
+
+.shadow-def {
+	box-shadow: 0px 3px 12px #0000000F;
+}
+
+.relative {
+	position: relative;
+}
+
+.auto-wrapper {
+	overflow: auto;
+}
+
+.visuallyhidden,
+.sr-only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+
+	&.focusable:active,
+	&.focusable:focus {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		position: static;
+		width: auto;
+	}
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.full-width,
+.\--full {
+	width: 100%;
+}
+
+.circle {
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.rounded {
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.full-height {
+	height: 100%;
+}
+
+$gaps: 0, 2, 4, 8, 12, 16, 18, 20, 24, 32, 36, 48, 64;
+
+@each $gap in $gaps {
+	.col-gap-#{$gap} {
+		column-gap: $gap * 1px !important;
+	}
+}
+
+@each $gap in $gaps {
+	.mb-#{$gap} {
+		margin-bottom: $gap * 1px !important;
+	}
+	.mr-#{$gap} {
+		margin-right: $gap * 1px !important;
+	}
+	.ml-#{$gap} {
+		margin-left: $gap * 1px !important;
+	}
+	.mt-#{$gap} {
+		margin-top: $gap * 1px !important;
+	}
+	.pb-#{$gap} {
+		padding-bottom: $gap * 1px !important;
+	}
+	.pr-#{$gap} {
+		padding-right: $gap * 1px !important;
+	}
+	.pl-#{$gap} {
+		padding-left: $gap * 1px !important;
+	}
+	.ph-#{$gap} {
+		padding-left: $gap * 1px !important;
+		padding-right: $gap * 1px !important;
+	}
+	.pt-#{$gap} {
+		padding-top: $gap * 1px !important;
+	}
+	.pv-#{$gap} {
+		padding-top: $gap * 1px !important;
+		padding-bottom: $gap * 1px !important;
+	}
+	.p-#{$gap} {
+		padding: $gap * 1px !important;
+	}
+}
+
+@each $state, $color in $palettes {
+	.text-#{$state} {
+		color: $color;
+	}
+
+	.bg-#{$state} {
+		background-color: $color;
+	}
+}
+
+@each $state, $color in $light-palettes {
+	.text-#{$state} {
+		color: $color;
+	}
+
+	.bg-#{$state} {
+		background-color: $color !important;
+	}
+}
+
+.line-separator {
+	position: relative;
+	text-align: center;
+	margin: 16px 0;
+	color: $black40;
+	font-size: 90%;
+
+	&:before {
+		content: '';
+		position: absolute;
+		display: block;
+		width: 100%;
+		border-top: 1px solid $black20;
+		top: 50%;
+		left: 0;
+		margin-top: -1px;
+	}
+
+	span {
+		position: relative;
+		z-index: 2;
+		display: inline-block;
+		background: #fff;
+		padding: 0 8px;
+	}
+}

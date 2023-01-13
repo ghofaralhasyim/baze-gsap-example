@@ -1,0 +1,14 @@
+.tags {
+  @include fontSize(14);
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: palette('primary');
+
+  &:hover, &:focus {
+    outline: none;
+    background-color: lighten(palette('primary'), 10%);
+    color: #fff;
+  }
+}

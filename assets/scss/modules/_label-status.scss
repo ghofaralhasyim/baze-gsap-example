@@ -1,0 +1,50 @@
+.label-status {
+  display: inline-block;
+  border-radius: 15px;
+  background-color: #fff;
+  padding: 1px 12px 3px;
+  border: 1px solid $black20;
+  vertical-align: middle;
+
+  &:before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $black20;
+    margin-right: 4px;
+  }
+  
+  &:before,
+  > span {
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  &--warning {
+    color: $orange;
+    border-color: $orange;
+
+    &:before {
+      background-color: $orange;
+    }
+  }
+
+  &--success {
+    color: $green;
+    border-color: $green;
+
+    &:before {
+      background-color: $green;
+    }
+  }
+
+  &--danger {
+    color: $red;
+    border-color: $red;
+
+    &:before {
+      background-color: $red;
+    }
+  }
+}

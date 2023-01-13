@@ -1,0 +1,91 @@
+// Typography
+// ------------------------------------------------------------------------ //
+$base_px_font_size: 16;
+$base_font_size: $base_px_font_size * 1px;
+$base_line_height: 1.6;
+$font_serif: 'Open Sans',-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+	'Helvetica Neue', Arial, sans-serif;
+$base_font_family: $font_serif;
+$space: $base_line_height * 1em;
+
+// Colors
+// ------------------------------------------------------------------------ //
+
+$palettes: (
+	'primary': #ff6600,
+	'black': #000,
+	'orange': #ff6600,
+	'red': #D60000,
+	'green': #30981D,
+	'grey': #828282,
+	'dark-grey': #656565,
+	'yellow': #FCC12D,
+	'blue': #4F8AD0,
+	'dark': #000F1D
+);
+
+$light-palettes: (
+	'light-grey': #ededed,
+	'white': #fff,
+	'light-green': #66B947,
+);
+
+@function palette($color) {
+	@if map-has-key($palettes, $color) {
+		@return map-get($palettes, $color);
+	} @else if map-has-key($light-palettes, $color) {
+		@return map-get($light-palettes, $color);
+	} @else {
+		@warn "key `#{$color}` was not found. Falling back to #000";
+		@return #000;
+	}
+}
+
+$primary: palette('primary');
+$green: palette('green');
+$orange: palette('orange');
+$red: palette('red');
+$grey: palette('grey');
+$dark: palette('dark');
+$dark-grey: palette('dark-grey');
+$yellow: palette('yellow');
+$blue: #4F8AD0;
+$light-green: palette('light-green');
+$black: #000;
+$black90: lighten($black, 10%);
+$black80: lighten($black, 20%);
+$black70: lighten($black, 30%);
+$black60: lighten($black, 40%);
+$black50: lighten($black, 50%);
+$black40: lighten($black, 60%);
+$black30: lighten($black, 70%);
+$black20: lighten($black, 80%);
+$black10: lighten($black, 90%);
+$black7: lighten($black, 93%);
+$black5: lighten($black, 95%);
+
+$link: $primary;
+$link_hover: darken($link, 10%);
+
+$selection_bg: #b3d4fc;
+$selection_color: $black;
+
+$shadow: 0 2px 6px rgba($black, 0.4);
+
+// Break Points
+// ------------------------------------------------------------------------ //
+
+$small: 'screen and (min-width: 28em)';
+$small_portrait: 'screen and (min-width: 28em) and (orientation: portrait)';
+$small_landscape: 'screen and (min-width: 28em) and (orientation: landscape)';
+
+$medium: 'screen and (min-width: 48em)';
+$medium_portrait: 'screen and (min-width: 48em) and (orientation: portrait)';
+$medium_landscape: 'screen and (min-width: 48em) and (orientation: landscape)';
+
+$large: 'screen and (min-width: 64em)';
+$extra_large: 'screen and (min-width: 75em)';
+
+$retina: '(-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 1.25dppx), (min-resolution: 120dpi)';
+
+@import '../mixin/mixin';

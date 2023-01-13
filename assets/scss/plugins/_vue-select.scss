@@ -1,0 +1,14 @@
+.v-select {
+ .vs__dropdown-toggle {
+   padding-bottom: 7px;
+   border-color: #ccc;
+
+  .vs__search, .vs__search:focus {
+    line-height: $base_line_height;
+    margin-top: 7px;
+  }
+ }
+ .vs__actions {
+   padding-top: 7px;
+ }
+}

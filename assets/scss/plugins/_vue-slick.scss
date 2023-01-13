@@ -1,0 +1,19 @@
+.slick-dots {
+	list-style: none;
+	padding: 0;
+	text-align: center;
+
+	> li {
+		display: inline-block;
+		margin: 0 4px;
+	}
+
+	button {
+		text-indent: -200px;
+		overflow: hidden;
+		padding: 0;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+	}
+}

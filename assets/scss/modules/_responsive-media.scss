@@ -1,0 +1,24 @@
+.responsive-media {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	display: block;
+
+	&.r-16-9 {
+		padding-bottom: 56.25%;
+	}
+
+	&.r-1,
+	&.r-square {
+		padding-bottom: 100%;
+	}
+
+	> * {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}

@@ -1,0 +1,178 @@
+.btn {
+    display: inline-block;
+    padding: 9px 24px 7px;
+    border: none;
+    font-family: inherit;
+    line-height: $base_line_height;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 600;
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    &:focus {
+        outline: none;
+    }
+
+    &[disabled],
+    &.disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    @media #{$medium} {
+        // padding: 8px 24px;
+    }
+
+    .btn-icon {
+        height: 22px;
+        vertical-align: middle;
+        display: inline-block;
+        transform: translateY(-2px);
+    }
+}
+
+
+@mixin btnStyle($bg, $color: #fff, $shade: dark) {
+    @extend .btn;
+    color: $color;
+    background-color: $bg;
+    border-radius: 4px;
+
+    &:hover {
+        color: $color;
+        box-shadow: inset 0 0 2px $bg;
+        @if $shade == dark {
+            background: lighten($bg, 10%);
+        } @else if $shade == light {
+            background: darken($bg, 9%);
+        }
+    }
+
+    &[disabled],
+    &.disabled {
+        opacity: .6;
+    }
+}
+
+@mixin btnGhost($bg, $color: #fff, $shade: dark) {
+    @extend .btn;
+    color: $bg;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    background: transparent;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+
+    &.btn--small {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    @if $shade == dark {
+        border-color: $bg;
+    } @else {
+        border-color: darken($bg, 10%);
+    }
+
+    &:hover {
+        color: #fff;
+        text-shadow: 0 1px 2px darken($bg, 15%);
+        @if $shade == dark {
+            background-color: $bg;
+        } @else if $shade == light {
+            background-color: darken($bg, 10%);
+        }
+    }
+
+    &[disabled],
+    &.disabled {
+        opacity: .6;
+    }
+}
+
+.btn--block {
+    width: 100%;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+}
+
+.btn--small {
+    padding: 3px 8px;
+}
+
+@each $state, $color in $palettes {
+    .btn--#{$state} {
+        @include btnStyle($color);
+    }
+
+    .btn--ghost-#{$state} {
+        @include btnGhost($color);
+    }
+}
+
+@each $state, $color in $light-palettes {
+    .btn--#{$state} {
+        @include btnStyle($color, $black80, light);
+    }
+
+    .btn--ghost-#{$state} {
+        @include btnGhost($color, $black80, light);
+    }
+}
+
+.btn--transparent {
+    @include btnGhost($primary);
+    border-color: transparent;
+}
+
+.btn--pils {
+    border-radius: 22px;
+}
+
+.btn--circle {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 40px;
+    border-radius: 50%;
+    border: 1px solid $primary;
+    background-color: $primary;
+    color: #fff;
+
+    &:hover {
+        background-color: lighten($primary, 8%);
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn--circle-ghost {
+    border: 1px solid $black20;
+    background-color: transparent;
+    color: $black40;
+
+    &:hover {
+        background-color: lighten($primary, 8%);
+        color: #fff;
+        border-color: $primary;
+    }
+}
+
+.btn--dashed {
+    @include btnGhost($dark-grey);
+    border-style: dashed;
+}
+
+.btn--outline {
+    @include btnGhost($dark-grey);
+}
+ 

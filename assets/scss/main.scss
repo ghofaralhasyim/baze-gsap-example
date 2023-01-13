@@ -1,0 +1,97 @@
+@import 'partials/normalize';
+@import 'partials/variables';
+@import 'partials/resets';
+@import 'partials/helpers';
+@import 'partials/print';
+
+@import 'modules/modules';
+@import 'plugins/vue-slick';
+
+html {
+	font: 400 14px $base_font_family;
+	line-height: $base_line_height;
+
+	@media #{$medium} {
+		font-size: $base_font_size;
+	}
+}
+
+body {
+	// text-decoration-skip: ink;
+	text-decoration-skip-ink: auto;
+	color: $black80;
+	background-color: $dark;
+}
+
+a {
+	color: $link;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: $link_hover;
+	}
+}
+
+.color-inherit {
+	&:hover,
+	&:focus {
+		color: inherit !important;
+	}
+}
+
+.block {
+	margin-bottom: $space;
+}
+
+.block-half {
+	margin-bottom: ($space / 2);
+}
+
+.container {
+	width: 92%;
+	max-width: 960px;
+	margin: 0 auto;
+
+	@media #{$medium} {
+		width: 94%;
+	}
+
+	@media #{$extra_large} {
+		max-width: 1280px;
+	}
+}
+
+.container--small {
+	max-width: 450px;
+
+	@media #{$extra_large} {
+		max-width: 450px;
+	}
+}
+
+.site-main {
+	position: relative;
+	z-index: 1;
+	margin-top: 60px;
+
+	&.header-overlap {
+		margin-top: 0;
+	}
+
+	@media #{$large} {
+		margin-top: 70px;
+	}
+}
+
+.page-enter-active,
+.page-leave-active {
+	opacity: 1;
+	transition: opacity 0.2s;
+	will-change: opacity;
+}
+
+.page-enter,
+.page-leave-to {
+	opacity: 0;
+}

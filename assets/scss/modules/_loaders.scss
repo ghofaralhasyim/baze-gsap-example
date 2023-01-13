@@ -1,0 +1,18 @@
+.spinner {
+  display: block;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 5px solid rgba($black, 0.1);
+  border-top-color: lighten($primary, 5%);
+  animation: spinning 1s infinite both;
+}
+
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}

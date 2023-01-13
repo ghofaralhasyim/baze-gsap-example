@@ -1,0 +1,37 @@
+.tab-nav {
+  border-bottom: 1px solid $black10;
+
+  ul {
+    display: flex;
+  }
+
+  ul li a {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px 3px;
+    border-bottom: 5px solid transparent;
+    color: $black60;
+
+    .counter {
+      display: inline-block;
+      font-size: 75%;
+      line-height: 1;
+      padding: 3px 4px 2px;
+      background: $primary;
+      color: #fff;
+      margin-left: 8px;
+      vertical-align: middle;
+      border-radius: 9px;
+      transform: translateY(-2px);
+    }
+
+    &.is-active {
+      color: $primary;
+      border-bottom-color: $primary;
+    }
+
+    @media #{$medium} {
+      padding: 20px 12px 15px;
+    }
+  }
+}
