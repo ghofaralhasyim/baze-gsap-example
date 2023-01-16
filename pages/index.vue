@@ -111,6 +111,17 @@
 				</div>
 			</div>
 		</section>
+
+		<section class="compare">
+			<div class="comparisonSection">
+				<div class="comparisonImage beforeImage">
+					<img src="https://assets.codepen.io/16327/before.jpg" alt="before" />
+				</div>
+				<div class="comparisonImage afterImage">
+					<img src="https://assets.codepen.io/16327/after.jpg" alt="after" />
+				</div>
+			</div>
+		</section>
 	</main>
 </template>
 
@@ -276,5 +287,34 @@ export default {
 			object-fit: cover;
 		}
 	}
+}
+
+.comparisonSection {
+	position: relative;
+	padding-bottom: 56.25%; /* to maintain aspect ratio (responsive!) */
+}
+.comparisonImage {
+	width: 100%;
+	height: 100%;
+}
+.afterImage {
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	transform: translate(100%, 0px);
+}
+.afterImage img {
+	transform: translate(-100%, 0px);
+}
+.comparisonImage img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+
+.compare {
+	overflow-x: hidden;
+	height: 300vh;
 }
 </style>

@@ -39,7 +39,7 @@ export default {
 			this.$gsap.to('.circle', {
 				x: '200',
 				duration: 1,
-				ease: 'ease.in'
+				ease: 'bounce.in'
 			})
 		},
 		animateFrom() {

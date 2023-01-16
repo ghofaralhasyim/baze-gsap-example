@@ -7,6 +7,10 @@
         {
             "title": "Tween Example",
             "url": "/tween"
+        },
+        {
+            "title": "V-Directive",
+            "url": "/directive"
         }
     ]
 }

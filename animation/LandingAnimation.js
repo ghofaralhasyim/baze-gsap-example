@@ -102,7 +102,35 @@ function Section2Animation() {
 	return timeline
 }
 
+function compareImageAnimation() {
+	const animate = gsap.utils.toArray('.comparisonSection').forEach(section => {
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: section,
+				start: 'center center',
+				end: () => '+=' + section.offsetWidth,
+				scrub: true,
+				pin: true,
+				anticipatePin: 1
+			},
+			defaults: { ease: 'none' }
+		})
+		tl.fromTo(
+			section.querySelector('.afterImage'),
+			{ xPercent: 100, x: 0 },
+			{ xPercent: 0 }
+		).fromTo(
+			section.querySelector('.afterImage img'),
+			{ xPercent: -100, x: 0 },
+			{ xPercent: 0 },
+			0
+		)
+	})
+	return animate
+}
+
 export default function LandingAnimation() {
 	HeroAnimation()
 	Section2Animation()
+	compareImageAnimation()
 }
