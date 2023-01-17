@@ -128,34 +128,32 @@ export default {
 		}
 	},
 
+	// CONFIG GLOBAL PAGE TRANSITION
 	pageTransition: {
 		name: 'page',
 		mode: 'out-in',
 		css: false,
 
+		beforeEnter(el) {
+			this.$gsap.set(el, {
+				opacity: 0
+			})
+		},
+
 		enter(el, done) {
-			this.$gsap.fromTo(
-				el,
-				{
-					opacity: 0,
-					x: '+100'
-				},
-				{
-					x: '0',
-					duration: 0.5,
-					ease: 'ease.inOut',
-					opacity: 1,
-					onComplete: done
-				}
-			)
+			this.$gsap.to(el, {
+				opacity: 1,
+				duration: 0.5,
+				ease: 'power2.inOut',
+				onComplete: done
+			})
 		},
 
 		leave(el, done) {
 			this.$gsap.to(el, {
 				opacity: 0,
 				duration: 0.5,
-				x: '-100',
-				ease: 'ease.inOut',
+				ease: 'power2.inOut',
 				onComplete: done
 			})
 		}

@@ -27,6 +27,7 @@ export default {
 		}
 	},
 	watch: {
+		// if value of number changed, trigger tween
 		number(newValue) {
 			this.tween(newValue)
 		}

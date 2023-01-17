@@ -115,10 +115,10 @@
 		<section class="compare">
 			<div class="comparisonSection">
 				<div class="comparisonImage beforeImage">
-					<img src="https://assets.codepen.io/16327/before.jpg" alt="before" />
+					<img src="~assets/img/before.jpg" alt="before" />
 				</div>
 				<div class="comparisonImage afterImage">
-					<img src="https://assets.codepen.io/16327/after.jpg" alt="after" />
+					<img src="~assets/img/after.jpg" alt="after" />
 				</div>
 			</div>
 		</section>
@@ -139,7 +139,9 @@ export default {
 		}
 	},
 	mounted() {
+		// Example animate using methods function
 		this.heroAnimation()
+		// Use separated script ~animation/LandingAnimation.js
 		LandingAnimation()
 	},
 	methods: {
